@@ -1,5 +1,14 @@
 public class Car extends Vehicle {
 
+    // Constant values cannot be changed in runtime
+    static final String VEHICLE_TYPE = "Car";
+
+    // Class variable (fuel for all cars)
+    // All objects share the same variable
+    static int totalFuel = 0;
+
+
+    // Instance variable
     private int fuel = 0;
 
     // Overload
@@ -21,10 +30,20 @@ public class Car extends Vehicle {
 
     public void refuel(int amount) {
         fuel +=amount;
+        totalFuel +=amount;
     }
 
-    public void refuel() {
-        fuel = 100;
+    public String getFuelInfo() {
+        return String.format("fuel %d (total fuel: %d)",
+                getFuel(),
+                getTotalFuel()
+        );
     }
 
+    public int getFuel() {
+        return fuel;
+    }
+    public int getTotalFuel() {
+        return totalFuel;
+    }
 }
