@@ -14,6 +14,7 @@ class CalculatorTest {
 
     @Test
     void testMultiplyThreeNumbers() {
+
         assertEquals(16.0, calculator.multiply(2.0, 2.0, 4.0));
     }
 }

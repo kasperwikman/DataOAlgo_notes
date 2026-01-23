@@ -19,4 +19,9 @@ public class Shirt extends Clothing implements Shoppable {
     public int getStock() {
         return 0;
     }
+
+    @Override
+    public void setStock(int stock) {
+
+    }
 }
