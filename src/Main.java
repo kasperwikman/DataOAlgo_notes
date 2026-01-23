@@ -1,8 +1,30 @@
-import java.sql.SQLOutput;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        // CC
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        while (true) {
+            int randomNum = random.nextInt(1, 100);
+
+            System.out.printf("%d - Press enter for a new number or Q to quit", randomNum);
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("q")) {
+                System.out.println("Thanks, goodbye!");
+                break;
+            }
+        }
+
+
+        System.exit(0);
+
+        // CC ends
 
         Scanner textInput = new Scanner(System.in);
         /* System.out.print("Write something: ");
