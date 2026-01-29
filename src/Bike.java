@@ -4,25 +4,25 @@ public class Bike extends Vehicle implements Shoppable {
 
     private int stock = 0;
 
-    private HashMap<String, String> specs = new HashMap<>();
+    private HashMap<String,String> specs = new HashMap<>();
 
     public Bike(String name) {
-        super(name, "pedaled vehicle");
+        super(name, "pedaled");
     }
     public Bike(String name, double price) {
-        super(name, "pedaled vehicle");
-        setPrice(price);
+        super(name, "pedaled");
+        setPrice(price); // anropar superklassens setter
     }
 
-    public void addSpec(String key, String value){
+    public void addSpec (String key, String value) {
         specs.put(key, value);
     }
 
-    public String getSpecsString(){
+    public String getSpecsString() {
         String ret = "";
-        // for-each loop
-        for(String key: specs.keySet()){
-            ret += String.format("%s:%s\n",
+        // for-each-loop
+        for (String key: specs.keySet()) {
+            ret += String.format(" - %s: %s\n",
                     key,
                     specs.get(key)
             );
@@ -30,9 +30,15 @@ public class Bike extends Vehicle implements Shoppable {
         return ret;
     }
 
+    /* flyttad till BikeFactory
+    public static Bike createRandomBike() {
+        return new Bike("aasdasd", 12123);
+    }
+    */
+
     @Override
     public String soundWarning() {
-        return "jingle";
+        return "pling-pling";
     }
 
     @Override
