@@ -2,6 +2,28 @@ import java.util.Scanner;
 
 public class Utils {
 
+    /**
+     * Code challenge, good input, bad input
+     */
+
+
+    public static int getIntInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print(prompt);
+            try {
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter an integer!");
+            }
+        }
+    }
+
+    public static int getIntInput() {
+        return getIntInput("Give an integer: ");
+    }
+
+
     public static void hello() {
         System.out.println("Hello!");
     }
@@ -16,6 +38,7 @@ public class Utils {
 
     }
 
+    /*
     public static int getIntInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
 
@@ -30,5 +53,7 @@ public class Utils {
             }
         }
 
+
     }
+    */
 }

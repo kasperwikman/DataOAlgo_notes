@@ -1,15 +1,22 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // new CCRandomRundown();
+        System.out.println("File content: " + FileUtils.readTextFile("greeting.txt"));
+        FileUtils.writeTextFile("Hello governor!", "greeting.txt");
 
-        Utils.hello();
 
-        //System.exit(0);
+        System.exit(0);
 
+
+        /*
+
+        int userInteger = Utils.getIntInput("Give an integer: ");
+
+        System.out.printf("Thank you, you gave the integer %s\n", userInteger);
 
         Scanner textInput = new Scanner(System.in);
 
@@ -41,6 +48,6 @@ public class Main {
 
 
         }
-
+*/
     }
 }
